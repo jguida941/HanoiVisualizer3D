@@ -334,39 +334,13 @@ class HanoiVisualizer(QMainWindow):
         self.reset_board()
 
     def capture_frame(self):
-        # Make sure window is visible and fully rendered
-        self.raise_()
-        self.activateWindow()
-        QApplication.processEvents()  # Process any pending events
-        
-        # Create screenshots directory if it doesn't exist
-        os.makedirs("screenshots", exist_ok=True)
-        
-        # Capture individual frame
         pixmap = self.view.grab()
-        filename = f"screenshots/frame_{self.move_index:03d}.png"
+        filename = f"frame_{self.move_index:03d}.png"
         pixmap.save(filename)
-        
-        # Save specific frames as screenshots for README
-        if self.move_index in [1, len(self.move_sequence)//2, len(self.move_sequence)-1]:
-            if self.move_index == 1:
-                # Capture the entire main window for 2D view
-                QTimer.singleShot(100, lambda: self.capture_full_window("screenshots/2d_view.png"))
-            elif self.move_index == len(self.move_sequence)//2:
-                # Capture specific widgets
-                QTimer.singleShot(100, lambda: self.depth_canvas.grab().save("screenshots/depth_chart.png"))
-                QTimer.singleShot(100, lambda: self.call_tree.grab().save("screenshots/call_tree.png"))
-            else:
-                QTimer.singleShot(100, lambda: self.canvas3d.grab().save("screenshots/3d_view.png"))
-                
-    def capture_full_window(self, filename):
-        """Capture the entire application window"""
-        self.raise_()
-        self.activateWindow()
-        QApplication.processEvents()
-        full_pixmap = self.grab()
-        full_pixmap.save(filename)
-        print(f"Full window screenshot saved to {filename}")
+        try:
+            os.remove(filename)
+        except OSError:
+            pass
 
     def update_3d_view(self):
         self.ax3d.clear()
