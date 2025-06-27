@@ -49,7 +49,6 @@ Depth Chart:
 
 ![Depth Chart](screenshots/depth_chart.png)
 
-*Note: Run the application once with at least 3 disks to generate the screenshot images.*
 
 ## Usage
 
