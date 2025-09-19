@@ -1,0 +1,6 @@
+# Base runtime deps
+-r requirements.txt
+
+# Dev/test deps
+pytest>=7.0
+pytest-qt>=4.2

@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "HanoiVisualizer3D"
+version = "0.1.0"
+description = "Interactive Tower of Hanoi visualizer with PyQt6 and Matplotlib"
+requires-python = ">=3.10"
+authors = [ { name = "Justin Guida" } ]
+readme = "HanoiVisualizer3D/README.md"
+dependencies = [
+  "PyQt6>=6.5",
+  "matplotlib>=3.7",
+]
+
+[project.optional-dependencies]
+test = [
+  "pytest>=7.0",
+  "pytest-qt>=4.2",
+]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+filterwarnings = [
+  "ignore::DeprecationWarning:matplotlib.*",
+]
