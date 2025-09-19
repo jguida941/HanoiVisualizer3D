@@ -9,13 +9,17 @@ venv:
 	$(VENV)/bin/python -m pip install --upgrade pip
 
 install: venv
-	$(PIP) install -e '.[test]'
+	# Install runtime dependencies (no editable install; no code changes required)
+	$(PIP) install -r requirements.txt
 
-run:
-	$(VENV)/bin/python -m HanoiVisualizer3D.main
+run: venv
+	# Launch the app directly from this folder
+	$(VENV)/bin/python main.py
 
-test:
-	$(VENV)/bin/python -m pytest
+test: venv
+	# Ensure test dependencies are present and make current folder importable as a package
+	$(PIP) install -r requirements-dev.txt
+	PYTHONPATH=$(PWD)/.. $(VENV)/bin/python -m pytest
 
 clean:
 	rm -rf __pycache__ tests/__pycache__ .pytest_cache build dist *.egg-info

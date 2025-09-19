@@ -22,7 +22,16 @@ An interactive Tower of Hanoi visualizer built with PyQt6, featuring both 2D and
 - PyQt6 (Qt GUI bindings)
 - Matplotlib (for 2D/3D plotting)
 
-Install base dependencies:
+Quick start (recommended):
+
+```bash
+# From the project folder
+make venv
+make install
+make run
+```
+
+Manual setup:
 
 ```bash
 python -m venv .venv
@@ -34,15 +43,10 @@ pip install -r requirements.txt
 Notes:
 - On macOS, run from Terminal/iTerm (not Code Runner) and ensure VS Code uses your venv interpreter.
 
-Developer setup (editable install, tests, Makefile):
-
-- From this folder (HanoiVisualizer3D):
-  - Editable install with test extras: `pip install -e '.[test]'`
-  - Or use the Makefile:
-    - `make venv`
-    - `make install`
-    - `make run`
-    - `make test`
+Developer workflow:
+- Use `make venv` then `make install` to set up.
+- Run the app with `make run`.
+- Run tests with `make test` (this installs dev deps and sets `PYTHONPATH` so imports resolve without changing code).
 
 ## Screenshots
 
@@ -68,15 +72,11 @@ Depth Chart:
 Run from the project directory:
 
 ```bash
-# From repo root
-python HanoiVisualizer3D/main.py
+# Option 1: Makefile (recommended)
+make run
 
-# Or from the subfolder
-cd HanoiVisualizer3D
+# Option 2: Directly with Python
 python main.py
-
-# Or as a module (from repo root)
-python -m HanoiVisualizer3D.main
 ```
 
 Keyboard shortcuts:
@@ -92,6 +92,13 @@ Troubleshooting:
 - “ModuleNotFoundError: PyQt6” → install deps with `pip install -r requirements.txt`.
 - “Qt platform plugin could not be initialized” on macOS/Linux → run from a real terminal and ensure the venv is active; try `pip install --upgrade PyQt6`.
 - Blank/slow plots on first run → ensure `matplotlib` installed via the steps above.
+
+Notes for Windows:
+- Activate the venv with `.venv\\Scripts\\activate`.
+- Replace `make` commands with the equivalent steps:
+  - `python -m venv .venv && .venv\\Scripts\\python -m pip install --upgrade pip`
+  - `pip install -r requirements.txt`
+  - `python main.py`
 
 ## License
 
