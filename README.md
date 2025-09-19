@@ -102,33 +102,12 @@ Notes for Windows:
 
 ## License
 
-# Creative Commons Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0)
 
-**Copyright (c) 2025 Justin Guida**
+**Evaluation only all rights reserved.**
 
-This work is licensed under the **Creative Commons Attribution-NonCommercial 4.0 International License**.
+You may **clone and run locally** for personal or hiring evaluation.  
+You may **not** redistribute, sublicense, or use this work commercially without my written permission.
 
-You are free to:
+See the [LICENSE](LICENSE) file for the exact terms.
 
-**Share** — copy and redistribute the material in any medium or format  
-**Adapt** — remix, transform, and build upon the material  
-
-Under the following terms:
-
- **Attribution** — You must give appropriate credit, provide a link to the license, and indicate if changes were made. Credit must include:
-- Name: *Justin Guida*
-- Year: *2025*
-- GitHub: [https://github.com/jguida941](https://github.com/jguida941)
-
- **NonCommercial** — You may not use the material for **commercial purposes** without **explicit written permission** from the author.
-
-Additional terms:
-
-- **You may not sell**, rebrand, or redistribute this work for profit.  
-- Educational institutions and students may freely use, adapt, and build upon this work **for non-commercial academic use**, including course materials and presentations.
-- Derivative works must also credit the original author clearly.
-
----
-
-To view the full license, visit:  
-[https://creativecommons.org/licenses/by-nc/4.0](https://creativecommons.org/licenses/by-nc/4.0)
+**Qt note:** This app uses **PyQt6 (GPLv3)**. Do **not** redistribute the app unless you comply with GPLv3 or have a Qt commercial license.
